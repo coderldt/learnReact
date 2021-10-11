@@ -1,0 +1,58 @@
+{
+  "id": "2858725",
+  "name": "my-react-admin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2674927",
+      "name": "箭头 上",
+      "font_class": "jiantoushang",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "577364",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "1308383",
+      "name": "200用户_用户",
+      "font_class": "200yonghu_yonghu",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "4347599",
+      "name": "icon_使用文档",
+      "font_class": "icon_shiyongwendang",
+      "unicode": "eb91",
+      "unicode_decimal": 60305
+    },
+    {
+      "icon_id": "8989225",
+      "name": "配网引导",
+      "font_class": "peiwangyindao",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11882429",
+      "name": "权限配置",
+      "font_class": "quanxianpeizhi",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "22960799",
+      "name": "创作者中心",
+      "font_class": "chuangzuozhezhongxin",
+      "unicode": "e823",
+      "unicode_decimal": 59427
+    }
+  ]
+}

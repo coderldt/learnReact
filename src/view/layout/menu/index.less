@@ -1,0 +1,43 @@
+.menuList {
+    position: relative;
+    // transition: all 1s;
+    
+    .menuItem {
+        position: relative;
+        padding-left: 20px;
+        line-height: 40px;
+
+        .label {
+            padding: 0 10px;
+            // transition: all .7s ease-in;
+
+            &.disNode {
+                display: none;
+            }
+        }
+
+        .jiantoushang {
+            position: absolute;
+            right: 10px;
+        }
+
+        &.isActive {
+            color: #fff;
+            background-color: #1da57a;
+        }
+    }
+
+    .menuList {
+        .menuItem {
+            padding-left: 30px;
+        }
+    }
+
+    .iconCenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -20px;
+        transition: all 1s;
+    } 
+}
