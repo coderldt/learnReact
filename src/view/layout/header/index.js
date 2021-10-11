@@ -23,7 +23,7 @@ class Header extends Component {
                     <span className="menuState r cur-p" onClick={() => this.props.onMenuChange()}>
                         { this.props.ovel.menuState ? <MenuFoldOutlined /> : <MenuUnfoldOutlined /> }
                     </span>
-                    <span className="no-select">首页</span>
+                    <span className="no-select" href="/">首页</span>
                 </div>
                 <div className="f1 tar">
                     <span className="r cur-p" onClick={ () => this.props.onAllScreenState() }>

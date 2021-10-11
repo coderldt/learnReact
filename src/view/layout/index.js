@@ -4,6 +4,7 @@ import './index.less'
 
 import Header from './header'
 import Sidebar from './sidebar'
+import Content from './content'
 
 class Layout extends Component {
     
@@ -12,14 +13,15 @@ class Layout extends Component {
         return (
             <div className="layout">
                 <div className="sidebar" style={sideWidth}><Sidebar ></Sidebar></div>
-                <div className="f1"><Header ></Header></div>
+                <div className="container">
+                    <Header />
+                    <div className="content">
+                        <Content />
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
-function mapStateToProps (state) {
-    return Object.assign({}, state)
-}
-
-export default connect(mapStateToProps, {})(Layout)
+export default connect((state) => Object.assign({}, state), {})(Layout)

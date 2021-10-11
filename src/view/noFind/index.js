@@ -6,8 +6,9 @@ class NoFind extends Component {
     }
 
     render () {
+        const style = { 'fontWeight': '700', 'fontSize': '40px' }
         return (
-            <div className=''>
+            <div className='df commonBox' style={style}>
                 404，页面丢失
             </div>
         )

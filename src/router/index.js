@@ -8,13 +8,13 @@ import NoFind from '../view/noFind'
 class Routers extends Component {
     render () {
         return (
-            <Router>
+            <HashRouter>
                 <Switch>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/' component={Layout}></Route>
                     <Route component={NoFind}></Route>
                 </Switch>
-            </Router>
+            </HashRouter>
         )
     }
 }
