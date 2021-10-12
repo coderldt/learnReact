@@ -22,13 +22,24 @@ const list = [
         ] 
     },
     { label: '井字棋游戏', key: 'aboutMe', icon: 'icon-chuangzuozhezhongxin', isOpen: false, path: '/game/ticTacToe' },
-    { label: '用户管理', key: 'userManager', icon: 'icon-200yonghu_yonghu', isOpen: false, path: '/userManager' },
+    { 
+        label: '系统管理', 
+        key: 'systemManager', 
+        icon: 'icon-200yonghu_yonghu', 
+        isOpen: false, 
+        children: [
+            { label: '用户管理', key: 'userManager', path: '/system/userManager' },
+        ] 
+    },
 ]
 
 import TicTacToeGame from '@/view/game/ticTacToe/index.js'
+import UserManager from '@/view/system/userManager/index.js'
 
 const listMap = [
-    { path: '/game/ticTacToe', Component: TicTacToeGame }
+    { path: '/game/ticTacToe', Component: TicTacToeGame },
+    { path: '/system/userManager', Component: UserManager },
+
 ]
 
 const currentItem = 'home'
