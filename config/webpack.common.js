@@ -16,7 +16,7 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /.less$|.css$/,
+                test: /.(less|css)$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -34,6 +34,15 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /.(png|jpg|gif)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 2048
+                    }
+                }
             }
         ],
     },

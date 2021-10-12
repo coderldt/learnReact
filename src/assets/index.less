@@ -1,5 +1,8 @@
 @import url(./reset.less);
 @import url(./common.less);
+
+@borderRadius: 4px;
+
 .cur-p {
     cursor: pointer;
 }
@@ -28,4 +31,14 @@
 
 .trans {
     transition: 'all .3s'
+}
+
+.textEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dib {
+    display: inline-block;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, HashRouter, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, HashRouter, Switch, Redirect } from 'react-router-dom'
 
 import Login from '../view/Login'
 import Layout from '../view/layout'
@@ -12,6 +12,7 @@ class Routers extends Component {
                 <Switch>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/' component={Layout}></Route>
+                    <Redirect from="/" to="/home"></Redirect>
                     <Route component={NoFind}></Route>
                 </Switch>
             </HashRouter>
