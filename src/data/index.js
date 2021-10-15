@@ -5,6 +5,7 @@ const projectsModulesData = {
         "fullPath": "/",
         "type": "root",
         "lock": false,
+        isOpen: true,
         "children": [
             {
                 "id": "cab17ece-3b3f-4818-90fc-33d4fa417ddf",
@@ -12,6 +13,7 @@ const projectsModulesData = {
                 "fullPath": "/闪电贷V1",
                 "type": "project",
                 "lock": false,
+                isOpen: true,
                 "children": [
                     {
                         "id": "4edb8f68-fd60-4c4e-abb1-bea7a7059491",
@@ -26,6 +28,7 @@ const projectsModulesData = {
                         "fullPath": "/闪电贷V1",
                         "type": "resource",
                         "lock": false,
+                        isOpen: true,
                         "children": [
                             {
                                 "id": "dc63355a-989c-4fe0-b968-f522e289cdeb",
@@ -33,6 +36,7 @@ const projectsModulesData = {
                                 "fullPath": "/闪电贷V1",
                                 "type": "lib",
                                 "lock": false,
+                                isOpen: true,
                                 "children": [
                                     {
                                         "id": "331985fc-465b-4d7d-8b29-9685eafff54e",
@@ -66,6 +70,7 @@ const projectsModulesData = {
                                 "fullPath": "/闪电贷V1",
                                 "type": "ruleLib",
                                 "lock": false,
+                                isOpen: true,
                                 "children": [
                                     {
                                         "id": "c4e75c13-b971-4c72-b970-8fda75c95c55",
@@ -83,6 +88,7 @@ const projectsModulesData = {
                                 "fullPath": "/闪电贷V1",
                                 "type": "decisionTableLib",
                                 "lock": false,
+                                isOpen: true,
                                 "children": [
                                     {
                                         "id": "b0afaeec-074e-4159-a166-bc8fea29e42e",
@@ -107,6 +113,7 @@ const projectsModulesData = {
                                 "fullPath": "/闪电贷V1",
                                 "type": "scorecardLib",
                                 "lock": false,
+                                isOpen: true,
                                 "children": [
                                     {
                                         "id": "ed143555-5075-4360-b164-5ada8566cd76",
@@ -123,6 +130,7 @@ const projectsModulesData = {
                                 "name": "决策流",
                                 "fullPath": "/闪电贷V1",
                                 "type": "flowLib",
+                                isOpen: true,
                                 "lock": false,
                                 "children": [
                                     {
@@ -144,3 +152,5 @@ const projectsModulesData = {
     },
     "projectNames": []
 }
+
+export default projectsModulesData

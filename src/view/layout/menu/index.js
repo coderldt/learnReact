@@ -27,7 +27,6 @@ class Menu extends Component {
 
     createMenu (list) {
         const menuState = this.props.ovel.menuState
-        console.log(this.state.currentItem);
         return <ul className="menuList">
             {  
                 list.map(item => {
@@ -37,7 +36,6 @@ class Menu extends Component {
                     }
 
                     const isActive = (item.path === this.state.currentItem ? 'isActive ' : '')
-                    console.log(item.key, this.state.currentItem, isActive);
                     const iconCenter = !menuState ? 'iconCenter ' : ''
                     return (
                         <li className={ 'menuItem cur-p ' + isActive + iconCenter } id={item.key} key={item.key} onClick={(e) => this.onMenuClick(e, item)}>
