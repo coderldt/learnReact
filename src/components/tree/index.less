@@ -1,29 +1,8 @@
 .Tree {
     line-height: 2em;
-    .item {
-        position: relative;
-        font-size: 12px;
+    height: 100%;
+    overflow-y: auto;
     
-        &::before {
-            content: '';
-            position: absolute;
-            left: -16px;
-            top: -5px;
-            width: 16px;
-            height: calc(100%);
-            border-left: 1px dashed #999;
-        }
-    
-        &::after {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 14px;
-            width: 12px;
-            height: 20px;
-            border-top: 1px dashed #999;
-        }
-    }
     .label {
         margin-left: 10px;
         font-size: 12px;
@@ -38,10 +17,36 @@
         cursor: pointer;
     }
     .child {
-        margin-left: 20px;
+        padding-left: 20px;
+        overflow: hidden;
+        transition: max-height .5s;
+        .item {
+            position: relative;
+            font-size: 12px;
+        
+            &::before {
+                content: '';
+                position: absolute;
+                left: -13.5px;
+                top: -6px;
+                width: 16px;
+                height: calc(100%);
+                border-left: 1px dashed #999;
+            }
+        
+            &::after {
+                content: '';
+                position: absolute;
+                left: -13.5px;
+                top: 14px;
+                width: 12px;
+                height: 20px;
+                border-top: 1px dashed #999;
+            }
+        }
     }
     
     ul li:last-child::before {
-        height: 20px;
+        height: 20px !important;
     }
 }

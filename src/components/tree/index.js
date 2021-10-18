@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TreeItem from './treeItem';
 import {
     PlusSquareOutlined,
     MinusSquareOutlined,
@@ -18,17 +17,17 @@ class Tree extends Component {
     }
 
     createItem (item) {
-        const { children, name, id } = item
+        const { children, name, id, isOpen, uid } = item
 
         let iconCon = ''
         if (children && children.length) {
-            iconCon = (item.isOpen ? <MinusSquareOutlined onClick={(e) => this.onItemCLick(e, item)} /> : <PlusSquareOutlined onClick={(e) => this.onItemCLick(e, item)}/>)
+            iconCon = (isOpen ? <MinusSquareOutlined onClick={(e) => this.onItemCLick(e, item)} /> : <PlusSquareOutlined onClick={(e) => this.onItemCLick(e, item)}/>)
         }
          
-        const body = <li className="item" key={id}>
+        const body = <li className="item" key={uid}>
             {iconCon}
             <span className="label" onClick={(e) => this.onItemCLick(e, item)}>{ name }</span>
-            { item.isOpen && children && children.length && <ul className="child">{ children.map(item => this.createItem(item)) }</ul>}
+            { isOpen && children && children.length && <ul className="child" style={{maxHeight: isOpen ? '2000px' : '0px'}}>{ children.map(item => this.createItem(item)) }</ul>}
         </li>
         return body
     }
@@ -36,26 +35,14 @@ class Tree extends Component {
     render () {
         const { data } = this.props
 
+        const child = data.map(item => this.createItem(item))
         const noData = <div>暂无数据</div>
 
-        const child = <ul className="child">
-            { data?.rootFile.children.map(item => this.createItem(item)) }
-        </ul>
-
-        const {children, name} = data?.rootFile
-        let iconCon = ''
-        if (children && children.length) {
-            iconCon = (data?.rootFile.isOpen ? <MinusSquareOutlined onClick={(e ) => this.onItemCLick(e, data?.rootFile)} /> : <PlusSquareOutlined onClick={(e ) => this.onItemCLick(e, data?.rootFile)} />)
-        }
         return (
             <div className='Tree'>
-                { data?.rootFile 
-                    ? <ul className="child">
-                        {iconCon}
-                        <span className="label" onClick={(e ) => this.onItemCLick(e, data?.rootFile)}>{ name }</span>
-                        { data?.rootFile.isOpen && children && children.length && child}
-                    </ul>
-                    : noData }
+                {
+                    data.length ? child :noData
+                }
             </div>
         )
     }

@@ -9,12 +9,34 @@ class tree extends Component {
             data: projectsModulesData
         }
     }
+
+    getUID () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
+
+    formatData (data) {
+        return data.map(item => {
+            const { id, name, fullPath, isOpen = true, children } = item
+            const detail = { id, name, fullPath, isOpen, children: [] }
+            detail.uid = this.getUID()
+            if (children && children.length) {
+                detail.children = this.formatData(children)
+            }
+            return detail
+        })
+    }
     
     render () {
+        const treeData = this.formatData([this.state.data.rootFile, this.state.data.rootFile])
         return (
             <div className='commonBox'>
                 <div className="title">树组件</div>
-                <Tree data={this.state.data}></Tree>
+                <div className="substance">
+                    <Tree data={treeData}></Tree>
+                </div>
             </div>
         )
     }
