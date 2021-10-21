@@ -8,8 +8,9 @@ import {
     MenuUnfoldOutlined,
     FullscreenOutlined,
     FullscreenExitOutlined,
-    PicCenterOutlined
+    PicCenterOutlined,
 } from '@ant-design/icons'
+import { Popover } from 'antd'
 
 class Header extends Component {
     constructor (props) {
@@ -17,6 +18,12 @@ class Header extends Component {
     }
 
     render () {
+        const content = (
+            <div>
+              <p>修改密码</p>
+              <p>退出登录</p>
+            </div>
+          );
         return (
             <div className="header df">
                 <div className="left">
@@ -30,7 +37,9 @@ class Header extends Component {
                         { this.props.ovel.allScreenState ? <FullscreenExitOutlined /> : <FullscreenOutlined /> }
                     </span>
                     <PicCenterOutlined className="r" />
-                    <span className="no-select">头像</span>
+                    <Popover content={content} className="no-select">
+                        管理者 | 你好
+                    </Popover>
                 </div>
             </div>
         )

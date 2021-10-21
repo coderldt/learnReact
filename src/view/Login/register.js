@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import { Input, Form, Button } from 'antd'
+import { Input, Form, Button, message } from 'antd'
 import './index.less'
 
-class Login extends Component {
+class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,22 +14,20 @@ class Login extends Component {
         }
     }
 
-    onFinish = (values) => {
-        const { username, password } = values
-        if (username === 'admin' && password === '123456') {
-            this.props.history.push('/home')
-        }
+    login = (values) => {
+        this.props.history.push('/login')
     }
 
     register = () => {
-        this.props.history.push('/register')
+        message.success('注册成功')
+        this.props.history.push('/home')
     }
 
     render() {
         return (
             <div id="Common">
                 <div className="box">
-                    <h2>欢迎来登录</h2>
+                    <h2>欢迎来注册</h2>
                     <Form name="basic"
                         labelCol={{ span: 4 }}
                         wrapperCol={{ span: 20 }}
@@ -50,11 +48,11 @@ class Login extends Component {
                             <Input.Password />
                         </Form.Item>
                         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                            <Button type="primary" htmlType="submit">
-                                登录
-                            </Button>
-                            <Button type="" htmlType="submit" onClick={this.register}>
+                            <Button type="primary" htmlType="submit" onClick={this.register}>
                                 注册
+                            </Button>
+                            <Button type="" onClick={this.login}>
+                                返回登录
                             </Button>
                         </Form.Item>
                     </Form>
@@ -63,4 +61,4 @@ class Login extends Component {
         )
     }
 }
-export default withRouter(Login)
+export default withRouter(Register)

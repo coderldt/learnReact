@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { uid } from 'uid'
 import Tree from '@/components/tree/index.js'
 import projectsModulesData from '@/data/index.js'
 
@@ -10,18 +11,11 @@ class tree extends Component {
         }
     }
 
-    getUID () {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-            return v.toString(16);
-        });
-    }
-
     formatData (data) {
         return data.map(item => {
             const { id, name, fullPath, isOpen = true, children } = item
             const detail = { id, name, fullPath, isOpen, children: [] }
-            detail.uid = this.getUID()
+            detail.uid = uid()
             if (children && children.length) {
                 detail.children = this.formatData(children)
             }

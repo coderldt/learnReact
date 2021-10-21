@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { list, currentItem} from 'config/menu/index.js'
 import { connect } from 'react-redux'
 import './index.less'
@@ -22,6 +22,7 @@ class Menu extends Component {
             this.setState({
                 currentItem: item.path
             })
+            this.props.history.push(item.path || '/noFind')
         }
     }
 
@@ -40,7 +41,7 @@ class Menu extends Component {
                     return (
                         <li className={ 'menuItem cur-p ' + isActive + iconCenter } id={item.key} key={item.key} onClick={(e) => this.onMenuClick(e, item)}>
                             { item.icon ? <i className={ "iconfont " + item.icon }></i> : '' }
-                            { <Link to={item.path || '/noFind'} className={'label ' + (!menuState ? 'disNode' : '')}>{item.label}</Link> }
+                            { <span className={'label ' + (!menuState ? 'disNode' : '')}>{item.label}</span> }
                             { 
                                 menuState && item.children 
                                 && item.children.length 
@@ -66,4 +67,4 @@ function mapStateToProps(state) {
     return Object.assign({}, state)
 }
 
-export default connect(mapStateToProps, {})(Menu)
+export default withRouter(connect(mapStateToProps, {})(Menu))
