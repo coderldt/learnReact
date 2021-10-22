@@ -38,7 +38,7 @@ class Header extends Component {
                     </span>
                     <PicCenterOutlined className="r" />
                     <Popover content={content} className="no-select">
-                        管理者 | 你好
+                        你好
                     </Popover>
                 </div>
             </div>
